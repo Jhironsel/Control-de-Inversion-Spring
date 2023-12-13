@@ -9,6 +9,7 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.1.xsd
     ">
+                                <!--Aqui debes cambiar las clases y no en el fuente.-->
     <bean id="miEmpleado" class="sur.softsurena.IOC.Jefe">
         
     </bean>
