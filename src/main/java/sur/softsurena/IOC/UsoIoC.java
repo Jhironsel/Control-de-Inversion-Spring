@@ -18,15 +18,16 @@ public class UsoIoC {
                         "contextoApp.xml" //Aqui esta el archivo xml.
                 )) {
             //2. Pedir el bean
-            Persona silvia, jhironsel;
-            silvia = contexto.getBean( //Aqui pedimos un bean a netbeans.
+            IPersona silvia;
+            IPersona jhironsel;
+            silvia = contexto.getBean(//Aqui pedimos un bean a netbeans.
                     "miEmpleado",
-                    Persona.class
+                    IPersona.class
             );
             
-            jhironsel = contexto.getBean( //Aqui pedimos un bean a netbeans.
+            jhironsel = contexto.getBean(//Aqui pedimos un bean a netbeans.
                     "miEmpleado2",
-                    Persona.class
+                    IPersona.class
             );
             //Fijarse que el tipo de la variable silvia es la interface.
             //Los parameros que recibe es el nombre de bean y La interface con su atributo class.
@@ -34,9 +35,11 @@ public class UsoIoC {
             //3. Utilizar el bean que hemos creado.
             System.out.println(silvia.getClass().getCanonicalName());
             System.out.println("Su tarea es: " + silvia.getOficio());
+            System.out.println("Sobre Informe: " + silvia.getInforme());
             
             System.out.println(jhironsel.getClass().getCanonicalName());
             System.out.println("Su tarea es: " + jhironsel.getOficio());
+            System.out.println("Sobre informe: " + jhironsel.getInforme());
             
         }
         
