@@ -43,6 +43,9 @@
     
     <bean id="miIngeniero" class="sur.softsurena.IOC.Ingeniero">
         
+        <property name="area" value="Informatica"></property>
+        <property name="ahno" value="2023"></property>
+        
     </bean>
     
     <bean id="miUsoID" class="sur.softsurena.IOC.UsoID"></bean>

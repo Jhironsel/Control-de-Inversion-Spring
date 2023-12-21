@@ -18,7 +18,11 @@ public class UsoIoC {
                         "contextoApp.xml" //Aqui esta el archivo xml.
                 )) {
             //2. Pedir el bean
-            IPersona secretaria, jefe, ingeniero;
+            IPersona secretaria, jefe;
+            //Es necesario utilizar la clase que tiene que ver con ingeniero 
+            //para poder tener acceso a los getter y setter.
+            Ingeniero ingeniero;
+            
             secretaria = contexto.getBean(//Aqui pedimos un bean a netbeans.
                     "miSecretaria",
                     IPersona.class
@@ -31,7 +35,7 @@ public class UsoIoC {
             
             ingeniero = contexto.getBean(
                     "miIngeniero", 
-                    IPersona.class
+                    Ingeniero.class
             );
             
             //Fijarse que el tipo de la variable silvia es la interface.
@@ -48,8 +52,11 @@ public class UsoIoC {
             System.out.println("Sobre informe: " + jefe.getInforme());
             System.out.println("");
             
+            //Haciendo inyeccion de campo desde los campos de la clase.
             System.out.println("Su tarea es: " + ingeniero.getOficio());
             System.out.println("Sobre informe: " + ingeniero.getInforme());
+            System.out.println("Area: " + ingeniero.getArea());
+            System.out.println("Año de inicio: " + ingeniero.getAhno());
             System.out.println("");
         }
         
