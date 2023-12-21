@@ -9,6 +9,9 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.1.xsd
     ">
+    
+    <context:property-placeholder location="classpath:propiedades.properties"/>
+    
                                 <!--Aqui debes cambiar las clases y no en el fuente.-->
     <bean id="miSecretaria" class="sur.softsurena.IOC.Secretaria">
         <!--
@@ -43,8 +46,8 @@
     
     <bean id="miIngeniero" class="sur.softsurena.IOC.Ingeniero">
         
-        <property name="area" value="Informatica"></property>
-        <property name="ahno" value="2023"></property>
+        <property name="area" value="${area}"></property>
+        <property name="ahno" value="${ahno}"></property>
         
     </bean>
     
