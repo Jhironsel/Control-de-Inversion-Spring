@@ -10,8 +10,41 @@
         http://www.springframework.org/schema/context/spring-context-3.1.xsd
     ">
                                 <!--Aqui debes cambiar las clases y no en el fuente.-->
-    <bean id="miEmpleado" class="sur.softsurena.IOC.Secretaria"></bean>
+    <bean id="miSecretaria" class="sur.softsurena.IOC.Secretaria">
+        <!--
+            Cuando una clase tiene constructor, estas etiquetas deben declararse.
+            Esta clase necesita ser inyectada por la clase UsoID
+            
+            UsoID es Uso de Inyeccion de Dependencia, esta clase implementa la 
+            interface de IInforme. 
+            
+            Sera la clase que se utilizara para inyectarse a las clases.
+        -->
+        <constructor-arg ref="miUsoID"></constructor-arg>
+    </bean>
+    
     <!--Declarondo varios beans-->
-    <bean id="miEmpleado2" class="sur.softsurena.IOC.Jefe"></bean>
+    <bean id="miJefe" class="sur.softsurena.IOC.Jefe">
+        <!--
+            Este es la forma en como se inyecta por metodo. La clase Jefe tiene
+            el metodo setJefe( ) el cual se le inyecta el bean en este metodo.
+            
+            La etiqueta property, tiene los atributos que permiten inyectar por
+            metodo. El atributo name es el nombre del metodo que se va inyectar.
+            
+            Este debe de quitarse el subfijo, set y poner la primera letra en
+            minuscula para que funcione. La demas como van.
+            
+            ref, indica el bean que va a utilizarse para inyectar.
+            
+        -->
+        <property name="iinforme" ref="miUsoID"></property>
+    </bean>
+    
+    <bean id="miIngeniero" class="sur.softsurena.IOC.Ingeniero">
+        
+    </bean>
+    
+    <bean id="miUsoID" class="sur.softsurena.IOC.UsoID"></bean>
 
 </beans>

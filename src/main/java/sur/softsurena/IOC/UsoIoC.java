@@ -18,29 +18,39 @@ public class UsoIoC {
                         "contextoApp.xml" //Aqui esta el archivo xml.
                 )) {
             //2. Pedir el bean
-            IPersona silvia;
-            IPersona jhironsel;
-            silvia = contexto.getBean(//Aqui pedimos un bean a netbeans.
-                    "miEmpleado",
+            IPersona secretaria, jefe, ingeniero;
+            secretaria = contexto.getBean(//Aqui pedimos un bean a netbeans.
+                    "miSecretaria",
                     IPersona.class
             );
             
-            jhironsel = contexto.getBean(//Aqui pedimos un bean a netbeans.
-                    "miEmpleado2",
+            jefe = contexto.getBean(//Aqui pedimos un bean a netbeans.
+                    "miJefe",
                     IPersona.class
             );
+            
+            ingeniero = contexto.getBean(
+                    "miIngeniero", 
+                    IPersona.class
+            );
+            
             //Fijarse que el tipo de la variable silvia es la interface.
             //Los parameros que recibe es el nombre de bean y La interface con su atributo class.
             
             //3. Utilizar el bean que hemos creado.
-            System.out.println(silvia.getClass().getCanonicalName());
-            System.out.println("Su tarea es: " + silvia.getOficio());
-            System.out.println("Sobre Informe: " + silvia.getInforme());
+            System.out.println("");
+            System.out.println("Su tarea es: " + secretaria.getOficio());
+            System.out.println("Sobre Informe: " + secretaria.getInforme());
             
-            System.out.println(jhironsel.getClass().getCanonicalName());
-            System.out.println("Su tarea es: " + jhironsel.getOficio());
-            System.out.println("Sobre informe: " + jhironsel.getInforme());
+            System.out.println("");
             
+            System.out.println("Su tarea es: " + jefe.getOficio());
+            System.out.println("Sobre informe: " + jefe.getInforme());
+            System.out.println("");
+            
+            System.out.println("Su tarea es: " + ingeniero.getOficio());
+            System.out.println("Sobre informe: " + ingeniero.getInforme());
+            System.out.println("");
         }
         
 

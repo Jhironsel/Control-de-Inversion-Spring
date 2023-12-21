@@ -2,6 +2,12 @@ package sur.softsurena.IOC;
 
 public class Jefe implements IPersona {
 
+    private IInforme iinforme;
+
+    public void setIinforme(IInforme iinforme) {
+        this.iinforme = iinforme;
+    }
+    
     @Override
     public String getOficio() {
         return "Solo Vengo hacer que la org. creesca.";
@@ -9,7 +15,7 @@ public class Jefe implements IPersona {
 
     @Override
     public String getInforme() {
-        return "Yo solo leo los informes.";
+        return "Los Jefes solo leen los informes y "+iinforme.getInforme();
     }
     
 }

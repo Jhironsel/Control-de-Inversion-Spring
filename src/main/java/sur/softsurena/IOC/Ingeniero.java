@@ -10,6 +10,5 @@ public class Ingeniero implements IPersona {
     @Override
     public String getInforme() {
         return "Yo realizo los informes en los planos.";
-    }
-    
+    }    
 }
