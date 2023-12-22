@@ -17,10 +17,22 @@ public class AnotacionesSpring {
                     "cajero",//Aqui solo llamo la clase, debe ser minuscula al inicial.
                     IEmpleados.class
             );
+            
+            IEmpleados jhironsel2 = contexto.getBean(
+                    "cajero",//Aqui solo llamo la clase, debe ser minuscula al inicial.
+                    IEmpleados.class
+            );
 
             //Usamos el bean
+            System.out.println("Sus tareas son: " + jhironsel);
             System.out.println("Sus tareas son: " + jhironsel.getTareas());
             System.out.println("En los informes: " + jhironsel.getInformes());
+            
+            System.out.println("");
+            
+            System.out.println("Sus tareas son: " + jhironsel2);
+            System.out.println("Sus tareas son: " + jhironsel2.getTareas());
+            System.out.println("En los informes: " + jhironsel2.getInformes());
         }
 
     }
