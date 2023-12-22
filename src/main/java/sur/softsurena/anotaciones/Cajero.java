@@ -2,7 +2,7 @@ package sur.softsurena.anotaciones;
 
 import org.springframework.stereotype.Component;
 
-@Component("beanCajero")
+@Component//Si eliminamos el ID del componente podemos llamar la clase desde getbean.
 public class Cajero implements IEmpleados {
 
     @Override
