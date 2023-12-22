@@ -19,4 +19,12 @@ public class Secretaria implements IPersona {
         return "Las secretarias hacen informe del tipo y "+nuevoInforme.getInforme();
     }
     
+    public void metodoInicial(){
+        System.err.println("Necesito iniciar.");
+    }
+    
+    public void metodoFinal(){
+        System.err.println("A Dios.");
+    }
+    
 }

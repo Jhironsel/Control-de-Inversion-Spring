@@ -11,25 +11,15 @@ public class UsoIoC {
                         "contextoApp.xml" //Aqui esta el archivo xml.
                 )) {
             //
-            IPersona secretaria, secretaria2, jefe, jefe2;
+            IPersona secretaria, jefe;
             Ingeniero ingeniero;
             
-            secretaria = contexto.getBean(//Aqui pedimos un bean a netbeans.
+            secretaria = contexto.getBean(
                     "miSecretaria",
                     IPersona.class
             );
             
-            secretaria2 = contexto.getBean(//Aqui pedimos un bean a netbeans.
-                    "miSecretaria",
-                    IPersona.class
-            );
-            
-            jefe = contexto.getBean(//Aqui pedimos un bean a netbeans.
-                    "miJefe",
-                    IPersona.class
-            );
-            
-            jefe2 = contexto.getBean(//Aqui pedimos un bean a netbeans.
+            jefe = contexto.getBean(
                     "miJefe",
                     IPersona.class
             );
@@ -49,11 +39,6 @@ public class UsoIoC {
             System.out.println("Su tarea es: " + secretaria.getOficio());
             System.out.println("Sobre Informe: " + secretaria.getInforme());
             
-            System.out.println("");
-            System.out.println("Memoria: "+secretaria2);
-            System.out.println("Su tarea es: " + secretaria2.getOficio());
-            System.out.println("Sobre Informe: " + secretaria2.getInforme());
-            
             /*
                 El bean de jefe no tiene la propiedad scope seteada, pero por 
             defecto spring utiliza el patron de diseño singleton. Es por ellos
@@ -63,10 +48,6 @@ public class UsoIoC {
             System.out.println("Memoria: "+jefe);
             System.out.println("Su tarea es: " + jefe.getOficio());
             System.out.println("Sobre informe: " + jefe.getInforme());
-            System.out.println("");
-            System.out.println("Memoria: "+jefe2);
-            System.out.println("Su tarea es: " + jefe2.getOficio());
-            System.out.println("Sobre informe: " + jefe2.getInforme());
             System.out.println("");
             
             //Haciendo inyeccion de campo desde los campos de la clase.

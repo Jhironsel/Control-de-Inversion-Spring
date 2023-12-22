@@ -12,12 +12,17 @@
     
     <context:property-placeholder location="classpath:propiedades.properties"/>
     
-    <bean id="miSecretaria" class="sur.softsurena.IOC.Secretaria" scope="prototype">
+    <!--Con el scope en prototype los metodos destroy no se ejecutan.-->
+    <bean id="miSecretaria" class="sur.softsurena.IOC.Secretaria" scope="prototype" 
+    init-method="metodoInicial"
+    destroy-method="metodoFinal">
            <constructor-arg ref="miUsoID"></constructor-arg>
     </bean>
     
-    <!--Declarondo varios beans-->
-    <bean id="miJefe" class="sur.softsurena.IOC.Jefe">
+    <!--Si el metodo es singleton los metodos destroy si se ejecutan.-->
+    <bean id="miJefe" class="sur.softsurena.IOC.Jefe"
+    init-method="metodoInicial"
+    destroy-method="metodoFinal">
         <property name="iinforme" ref="miUsoID"></property>
     </bean>
     

@@ -18,4 +18,12 @@ public class Jefe implements IPersona {
         return "Los Jefes solo leen los informes y "+iinforme.getInforme();
     }
     
+    private void metodoInicial(){
+        System.out.println("Iniciando en JEFE.");
+    }
+    
+    private void metodoFinal(){
+        System.out.println("Saliendo de JEFE.");
+    }
+    
 }
