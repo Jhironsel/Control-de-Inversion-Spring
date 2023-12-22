@@ -9,7 +9,7 @@ public class Cajero implements IEmpleados {
     private IInformes informeFinaciero;
 
     @Autowired
-    public void setInformeFinaciero(IInformes informeFinaciero) {
+    public void AlquierNombre(IInformes informeFinaciero) {
         this.informeFinaciero = informeFinaciero;
     }
 
