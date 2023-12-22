@@ -6,12 +6,8 @@ import org.springframework.stereotype.Component;
 @Component//Si eliminamos el ID del componente podemos llamar la clase desde getbean.
 public class Cajero implements IEmpleados {
     
-    private IInformes informeFinaciero;
-
     @Autowired
-    public void AlquierNombre(IInformes informeFinaciero) {
-        this.informeFinaciero = informeFinaciero;
-    }
+    private IInformes informeFinaciero;
 
     @Override
     public String getTareas() {
