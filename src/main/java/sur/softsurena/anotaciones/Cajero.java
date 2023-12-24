@@ -2,10 +2,17 @@ package sur.softsurena.anotaciones;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import org.springframework.beans.factory.annotation.Value;
 
 public class Cajero implements IEmpleados {
     
     private IInformes informeFinaciero;
+    
+    @Value("${email}")
+    private String correo;
+    
+    @Value("${zona}")
+    private String zona;
 
     public Cajero(IInformes informeFinaciero) {
         this.informeFinaciero = informeFinaciero;
@@ -19,6 +26,14 @@ public class Cajero implements IEmpleados {
     @Override
     public String getInformes() {
         return informeFinaciero.getInformeFinaciero();
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public String getZona() {
+        return zona;
     }
     
     @PostConstruct

@@ -3,9 +3,11 @@ package sur.softsurena.anotaciones;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan("sur.softsurena.anotaciones")
+@PropertySource("classpath:Propiedades.properties")
 public class ContextoApp {
     
     public InformeFinacieroTRIM1 informeFinanciero1(){

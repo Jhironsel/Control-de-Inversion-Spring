@@ -11,14 +11,16 @@ public class AnotacionesSpring {
                         ContextoApp.class
                 )) {
             // Pedimos el bean.
-            IEmpleados jhironsel = contexto.getBean(
+            Cajero jhironsel = contexto.getBean(
                     "beanCajero",//Aqui solo llamo la clase, debe ser minuscula al inicial.
-                    IEmpleados.class
+                    Cajero.class
             );  // Pedimos el bean.
             
             System.out.println("MEMORIA: " + jhironsel);
             System.out.println("Sus tareas son: " + jhironsel.getTareas());
             System.out.println("En los informes: " + jhironsel.getInformes());
+            System.out.println("Correo: "+jhironsel.getCorreo());
+            System.out.println("Zona: "+jhironsel.getZona());
             System.out.println("");
         }
     }
